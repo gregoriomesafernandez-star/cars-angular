@@ -2,6 +2,10 @@
 
 Frontend application developed with Angular featuring JWT authentication and a complete car management system connected to a Laravel REST API.
 
+## Backend Repository
+
+[Cars API Laravel](https://github.com/gregoriomesafernandez-star/cars-api-laravel)
+
 ## Features
 
 - User registration
