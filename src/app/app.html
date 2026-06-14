@@ -63,8 +63,66 @@
       </div>
     }
 
+    <button
+      (click)="menuOpen = !menuOpen"
+      class="md:hidden text-black text-3xl cursor-pointer"
+    >
+      ☰
+    </button>
   </nav>
+  @if(menuOpen){
 
+  <div class="md:hidden bg-white border-t">
+
+    <ul class="flex flex-col text-gray-700">
+
+      <li class="px-6 py-4 border-b hover:bg-gray-300 transition duration-250">
+        <a [routerLink]="['/home']">
+          Inicio
+        </a>
+      </li>
+
+      @if(identity){
+        <li class="px-6 py-4 border-b hover:bg-gray-300 transition duration-250">
+          <a [routerLink]="['/crear-coche']">
+            Crear Vehículo
+          </a>
+        </li>
+      }
+
+      @if(!identity){
+
+        <li class="px-6 py-4 border-b hover:bg-gray-300 transition duration-250">
+          <a [routerLink]="['/login']">
+            Identificáte
+          </a>
+        </li>
+
+        <li class="px-6 py-4 hover:bg-gray-300 transition duration-250">
+          <a [routerLink]="['/register']">
+            Registrarse
+          </a>
+        </li>
+
+      } @else {
+
+        <li class="px-6 py-4 border-b hover:bg-gray-300 transition duration-250">
+          {{ identity.name + ' ' + identity.surname }}
+        </li>
+
+        <li class="px-6 py-4 hover:bg-gray-300 transition duration-250">
+          <a [routerLink]="['/logout', 1]">
+            Salir
+          </a>
+        </li>
+
+      }
+
+    </ul>
+
+  </div>
+
+  }
 </header>
 
 <main class="main">

@@ -13,6 +13,7 @@ export class App implements OnInit, DoCheck{
 
   public identity!: User;
   public token;
+  public menuOpen = false;
 
   // Inyección sin necesidad de constructor
   private _userService = inject(UserService);
