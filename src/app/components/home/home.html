@@ -1,0 +1,54 @@
+
+<div class="w-full max-w-5xl mx-auto mt-10 overflow-x-auto">
+  @if(loading){
+
+    <h3 class="text-center font-bold text-2xl mt-3">
+      Cargando...
+    </h3>
+
+  } @else if(cars.length > 0){
+  <table class="w-full border border-gray-200 rounded-lg overflow-hidden">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">ID</th>
+        <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">Título</th>
+        <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">Descripción</th>
+        <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">Precio</th>
+        <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">¿A la venta?</th>
+        @if(identity){<th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">Acciones</th>}
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (car of cars; track car.id) {
+        <tr class="border-t border-gray-200 hover:bg-gray-50">
+          <td class="px-4 py-3 text-sm text-gray-700">{{ car.id }}</td>
+          <td class="px-4 py-3 text-sm font-medium text-gray-900"><a [routerLink]="['/coche', car.id]" class="underline">{{ car.title }}</a></td>
+          <td class="px-4 py-3 text-sm text-gray-700">{{ car.description }}</td>
+          <td class="px-4 py-3 text-sm text-gray-700">{{ car.price }} €</td>
+          <td class="px-4 py-3 text-sm text-gray-700">{{ car.status == 'true' ? 'Sí' : 'No' }}</td>
+          
+          @if(identity){
+            <td class="px-4 py-3 text-sm text-gray-700 flex gap-4">
+              <a [routerLink]="['/editar-coche', car.id]" class="bg-orange-500/95 hover:bg-orange-600 text-white px-4 py-2 rounded-sm shadow-lg hover:shadow-xl transition">
+                Editar
+              </a>
+              <button
+                type="button"
+                (click)="deleteCar(car.id)"
+                class="bg-red-500/95 hover:bg-red-600 text-white px-4 py-2 rounded-sm shadow-lg hover:shadow-xl transition cursor-pointer">
+                Borrar
+              </button>
+            </td>
+          } 
+          
+        </tr>
+      }
+    </tbody>
+  </table>
+  } @else {
+     <h3 class="text-center font-bold text-2xl mt-3">
+      No hay coches para mostrar
+    </h3>
+  }
+</div>
