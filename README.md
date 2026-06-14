@@ -19,7 +19,6 @@ Frontend application developed with Angular featuring JWT authentication and a c
 - Delete cars
 - Form validation
 - Angular services
-- Signals
 - Responsive design
 - Integration with Laravel REST API
 
