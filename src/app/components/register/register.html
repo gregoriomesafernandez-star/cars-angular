@@ -12,11 +12,11 @@
             <div class="bg-red-500 text-white opacity-55 
                         mb-5 rounded p-4 shadow-sm shadow-red-300">No se ha completado el registro correctamente</div>
         }
-        <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm" class="w-full md:w-1/3 space-y-4 border p-8 rounded border-gray-300 shadow-lg shadow-gray-400" >
+        <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm" class="w-full md:w-2/3 lg:w-1/3 space-y-4 border p-8 rounded border-gray-300 shadow-lg shadow-gray-400" >
 
             <h1 class="text-4xl mb-10 text-center"> {{title}} </h1>
 
-            <div class="flex flex-col md:flex-row gap-2 md:items-center">
+            <div class="flex flex-col lg:flex-row gap-2 md:items-center">
 
                 <label for="name" class="md:w-17 font-semibold text-gray-700">Nombre</label>
 
@@ -38,7 +38,7 @@
                 
             </div>
 
-            <div class="flex flex-col md:flex-row gap-2 md:items-center">
+            <div class="flex flex-col lg:flex-row gap-2 md:items-center">
 
                 <label for="surname" class="md:w-17 font-semibold text-gray-700">Apellidos</label>
 
@@ -62,7 +62,7 @@
 
             </div>
 
-            <div class="flex flex-col md:flex-row gap-2 md:items-center">
+            <div class="flex flex-col lg:flex-row gap-2 md:items-center">
 
                 <label for="email" class="md:w-17 font-semibold text-gray-700">Email</label>
 
@@ -86,7 +86,7 @@
 
             </div>
 
-            <div class="flex flex-col md:flex-row gap-2 md:items-center">
+            <div class="flex flex-col lg:flex-row gap-2 md:items-center">
 
                 <label for="password" class="md:w-17 font-semibold text-gray-700">Password</label>
 
